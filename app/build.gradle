@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+dependencies {
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.19'
+}
+
 android {
     compileSdkVersion 26
     defaultConfig {

@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
             BluetoothDevice device = adapter.getRemoteDevice("A4:5E:60:DF:2F:B6");
-            ConnectThread mConnectThread = new ConnectThread(device);
-            mConnectThread.run();
+            BluetoothHandlerThread mBluetoothHandlerThread = new BluetoothHandlerThread(device);
+            mBluetoothHandlerThread.run();
 
             }
         });
