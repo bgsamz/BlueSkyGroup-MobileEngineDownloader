@@ -1,4 +1,4 @@
-package com.example.joseph.bluesky;
+package com.bluesky.mobileEEI;
 
 import org.junit.Test;
 

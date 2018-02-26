@@ -1,4 +1,4 @@
-package com.example.joseph.bluesky;
+package com.bluesky.mobileEEI;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

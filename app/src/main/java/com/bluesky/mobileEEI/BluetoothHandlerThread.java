@@ -1,8 +1,8 @@
-package com.example.joseph.bluesky;
+package com.bluesky.mobileEEI;
 
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.util.Log;
 
 import java.io.BufferedInputStream;
@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.UUID;
 
 import static android.content.ContentValues.TAG;
@@ -23,11 +22,13 @@ public class BluetoothHandlerThread extends Thread {
     private final BluetoothSocket mmSocket;
     private final BluetoothDevice mmDevice;
     private static final UUID MY_UUID =UUID.fromString("be1f833d-037a-41c9-9fb5-54166e3799ab");
-    public BluetoothHandlerThread(BluetoothDevice device) {
+    private Context context;
+    public BluetoothHandlerThread(BluetoothDevice device, Context context) {
         // Use a temporary object that is later assigned to mmSocket
         // because mmSocket is final.
         BluetoothSocket tmp = null;
         mmDevice = device;
+        this.context = context;
 
         try {
             // Get a BluetoothSocket to connect with the given BluetoothDevice.
@@ -61,29 +62,23 @@ public class BluetoothHandlerThread extends Thread {
             InputStream input = mmSocket.getInputStream();
             BufferedInputStream bis = new BufferedInputStream(input);
 
-            File dir = new File("/storage/emulated/0/TEST_FOLDER");
-            if(!dir.exists())
-            {
-                dir.mkdir();
+            File file = new File(context.getFilesDir(), "test.yaml");
+            if (file.exists()) {
+                file.delete();
             }
-
-            String rootPath = "/storage/emulated/0/TEST_FOLDER";
-            File test_file = new File(rootPath + "/TEST1.yaml");
-            if(!test_file.exists())
-            {
-                test_file.createNewFile();
-            }
-            FileOutputStream fos = new FileOutputStream(rootPath + "/TEST1.txt", true);
+            file.createNewFile();
+            FileOutputStream fos = new FileOutputStream(file);
 
             int bufferSize = 4096;
             byte[] buffer = new byte[bufferSize];
-            while (true) {
+            int bytesRead;
+            while ((bytesRead = bis.read(buffer)) != -1) {
                 try {
-                    int bytesRead = -1;
+//                    int bytesRead = -1;
 //                    String message = "";
-                    if (bis.available() > 0) {
-                        bytesRead = bis.read(buffer);
-                        if (bytesRead > 0) {
+//                    if (bis.available() > 0) {
+//                        bytesRead = bis.read(buffer);
+//                        if (bytesRead > 0) {
 //                            while ((bytesRead == bufferSize) && (buffer[bufferSize - 1] != 0)) {
 //                                message = message + new String(buffer, 0, bytesRead);
 //                                bytesRead = input.read(buffer);
@@ -94,9 +89,15 @@ public class BluetoothHandlerThread extends Thread {
 //                                message = message + new String(buffer, 0, bytesRead - 1);
 //                            }
                             fos.write(buffer, 0, bytesRead);
-                        }
+//                            i++;
+//                        } else {
+//                            fos.close();
+//                            bis.close();
+//                            input.close();
+//                            break;
+//                        }
                     }
-                } catch (IOException e) {
+                 catch (IOException e) {
                     fos.close();
                     bis.close();
                     input.close();
@@ -104,6 +105,10 @@ public class BluetoothHandlerThread extends Thread {
                     break;
                 }
             }
+            fos.close();
+            bis.close();
+            input.close();
+//            return;
         } catch (IOException inputException) {
             // Unable to get input stream.
         }

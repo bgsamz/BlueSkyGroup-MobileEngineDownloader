@@ -7,7 +7,7 @@ dependencies {
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.joseph.bluesky"
+        applicationId "com.bluesky.mobileEEI"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
