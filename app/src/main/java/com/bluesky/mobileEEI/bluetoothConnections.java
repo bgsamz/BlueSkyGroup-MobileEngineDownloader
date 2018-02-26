@@ -91,7 +91,8 @@ public class bluetoothConnections extends AppCompatActivity{
 
                try{ BluetoothDevice selDev = adapter.getRemoteDevice(mac);
                     BluetoothHandlerThread mConnectThread = new BluetoothHandlerThread(selDev, getApplicationContext());
-                    mConnectThread.run();
+                    mConnectThread.start();
+                    mConnectThread.join();
                }
                catch(Exception e){
                    listAdapter.add("FAILURE");
@@ -122,9 +123,8 @@ public class bluetoothConnections extends AppCompatActivity{
         listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, itemsList);
         mainListView.setAdapter( listAdapter );
 
-
-      //  getPairs();
-      //  buttons();
+        getPairs();
+        buttons();
     }
 }
 

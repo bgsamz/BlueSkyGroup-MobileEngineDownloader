@@ -33,17 +33,21 @@ public class MainActivity extends AppCompatActivity {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            TextView textView = (TextView) findViewById(R.id.parsedText);
-            textView.setText(started);
-            BluetoothDevice device = adapter.getRemoteDevice("A4:5E:60:DF:2F:B6");
-            BluetoothHandlerThread mBluetoothHandlerThread = new BluetoothHandlerThread(device, getApplicationContext());
-            mBluetoothHandlerThread.start();
-            try {
-                mBluetoothHandlerThread.join();
-                textView.setText(ended);
-            } catch (Exception e) {
-                textView.setText(e.toString());
-            }
+
+            Intent currentListsIntent = new Intent(MainActivity.this, bluetoothConnections.class);
+            startActivity(currentListsIntent);
+
+//            TextView textView = (TextView) findViewById(R.id.parsedText);
+//            textView.setText(started);
+//            BluetoothDevice device = adapter.getRemoteDevice("A4:5E:60:DF:2F:B6");
+//            BluetoothHandlerThread mBluetoothHandlerThread = new BluetoothHandlerThread(device, getApplicationContext());
+//            mBluetoothHandlerThread.start();
+//            try {
+//                mBluetoothHandlerThread.join();
+//                textView.setText(ended);
+//            } catch (Exception e) {
+//                textView.setText(e.toString());
+//            }
             }
         });
 
