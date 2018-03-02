@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.beardedhen.androidbootstrap.TypefaceProvider;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
@@ -107,6 +109,7 @@ public class bluetoothConnections extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TypefaceProvider.registerDefaultIconSets();
         setContentView(R.layout.connect_activity);
         // Register for broadcasts when a device is discovered.
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);

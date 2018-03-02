@@ -30,6 +30,30 @@ public class EngineData
 
     }
 
+    public String getEngineSerial() {
+        return engineSerial;
+    }
+
+    public String getAircraftID() {
+        return aircraftID;
+    }
+
+    public Date getDateTime() {
+        return dateTime;
+    }
+
+    public String getEnginePosition() {
+        return enginePosition;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
     @Override
     public String toString() {
         return "\nEngineData: engineSerial = " + engineSerial + ", aircraftID = " + aircraftID + ", dateTime = "

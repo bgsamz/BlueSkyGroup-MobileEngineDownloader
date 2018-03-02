@@ -17,7 +17,7 @@ import java.io.OutputStream;
 
 public class FileParser {
 
-    public String run(Context context) {
+    public DownloadFile run(Context context) {
         try {
             File file = new File(context.getFilesDir(), "test.yaml");
             if(!file.exists())
@@ -40,11 +40,11 @@ public class FileParser {
             output.close();
             input.close();
 
-            return testMaint.toString();
+            return testMaint;
 
         } catch (Exception e) {
             System.err.println("Error: " + e);
-            return "Error: " + e;
+            return null;
         }
 
 //        return "ERROR";

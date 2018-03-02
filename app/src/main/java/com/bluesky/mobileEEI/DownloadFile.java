@@ -1,10 +1,12 @@
 package com.bluesky.mobileEEI;
 
+import java.io.Serializable;
+
 /**
  * Created by bgsamz on 2/19/18.
  */
 
-public class DownloadFile {
+public class DownloadFile implements Serializable {
     private AllEventsChart allEventsChart;
     private Chart chart;
     private EngineData engineData;
@@ -17,6 +19,42 @@ public class DownloadFile {
 
     public DownloadFile () {
 
+    }
+
+    public EngineData getEngineData() {
+        return engineData;
+    }
+
+    public AllEventsChart getAllEventsChart() {
+        return allEventsChart;
+    }
+
+    public Chart getChart() {
+        return chart;
+    }
+
+    public EngineMaintenanceData getEngineMaintenanceData() {
+        return engineMaintenanceData;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public EventSummary getEventSummary() {
+        return eventSummary;
+    }
+
+    public ExceedanceDetail getExceedanceDetail() {
+        return exceedanceDetail;
+    }
+
+    public ExceedanceSummary getExceedanceSummary() {
+        return exceedanceSummary;
+    }
+
+    public Fault getFault() {
+        return fault;
     }
 
     @Override

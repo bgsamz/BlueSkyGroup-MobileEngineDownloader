@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.beardedhen.androidbootstrap.TypefaceProvider;
 import com.bluesky.mobileEEI.R;
 
 
@@ -17,8 +18,12 @@ public class MainActivity extends AppCompatActivity {
     static String ended = "thread has joined";
     public Button connect;
     public Button parse;
+    public Button summaryPage;
     private final static int REQUEST_ENABLE_BT = 1;
     BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+
+    public DownloadFile downloadFile = null;
+
     private void enableBT() {
         if (adapter == null) {
             // Device doesn't support Bluetooth
@@ -56,15 +61,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FileParser fileParser = new FileParser();
-                String parsed = fileParser.run(getApplicationContext());
-                TextView textView = (TextView) findViewById(R.id.parsedText);
-                textView.setText(parsed);
+                downloadFile = fileParser.run(getApplicationContext());
+//                TextView textView = (TextView) findViewById(R.id.parsedText);
+//                textView.setText(parsed);
+            }
+        });
+
+        summaryPage = (Button) findViewById(R.id.SummaryPage);
+        summaryPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent summaryPageIntent = new Intent(MainActivity.this, SummaryPage.class);
+                summaryPageIntent.putExtra("DownloadFile", downloadFile);
+                startActivity(summaryPageIntent);
             }
         });
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TypefaceProvider.registerDefaultIconSets();
         setContentView(R.layout.activity_main);
         enableBT();
         buttons();

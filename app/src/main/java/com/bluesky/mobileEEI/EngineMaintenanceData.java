@@ -28,6 +28,30 @@ public class EngineMaintenanceData
 
     }
 
+    public int getNumberConditions() {
+        return numberConditions;
+    }
+
+    public int getNumberTypeOne() {
+        return numberTypeOne;
+    }
+
+    public int getNumberTypeTwo() {
+        return numberTypeTwo;
+    }
+
+    public int getNumberEvents() {
+        return numberEvents;
+    }
+
+    public int getNumberChips() {
+        return numberChips;
+    }
+
+    public int getNumberOilBypass() {
+        return numberOilBypass;
+    }
+
     @Override
     public String toString() {
         return "\nEngineMaintenanceData: numberConditions =  " + numberConditions + ", numberTypeOne = " + numberTypeOne +
