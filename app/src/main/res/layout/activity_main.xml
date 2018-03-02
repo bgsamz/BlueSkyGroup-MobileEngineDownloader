@@ -7,51 +7,54 @@
     tools:context="com.bluesky.mobileEEI.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
+    <Button
         android:id="@+id/Connect"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="89dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="94dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="16dp"
         android:text="Connect"
-        app:layout_constraintBottom_toBottomOf="@+id/Parse"
-        app:layout_constraintEnd_toStartOf="@+id/page"
+        app:layout_constraintBottom_toTopOf="@+id/parsedText"
+        app:layout_constraintEnd_toStartOf="@+id/Parse"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Parse" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
+    <Button
         android:id="@+id/Parse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:text="Parse"
+        app:layout_constraintEnd_toStartOf="@+id/SummaryPage"
         app:layout_constraintStart_toEndOf="@+id/Connect"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.beardedhen.androidbootstrap.BootstrapButton
+    <Button
         android:id="@+id/SummaryPage"
-        android:layout_width="128dp"
-        android:layout_height="29dp"
-        android:layout_marginEnd="77dp"
+        android:layout_width="117dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginTop="16dp"
         android:text="Summary Page"
-        app:layout_constraintBottom_toBottomOf="@+id/Parse"
+        app:layout_constraintBottom_toTopOf="@+id/parsedText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Connect"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/Parse"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.beardedhen.androidbootstrap.AwesomeTextView
+    <TextView
         android:id="@+id/parsedText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="13dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Connect" />
+        app:layout_constraintTop_toBottomOf="@+id/SummaryPage" />
 </android.support.constraint.ConstraintLayout>

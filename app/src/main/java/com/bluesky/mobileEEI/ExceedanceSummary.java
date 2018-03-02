@@ -1,5 +1,6 @@
 package com.bluesky.mobileEEI;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 
@@ -7,7 +8,7 @@ import java.sql.Time;
  * Created by Robert on 2/15/2018.
  */
 
-public class ExceedanceSummary
+public class ExceedanceSummary implements Serializable
 {
     private String excID;
     private Date date;

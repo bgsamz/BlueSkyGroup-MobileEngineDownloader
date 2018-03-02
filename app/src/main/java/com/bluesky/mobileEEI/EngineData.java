@@ -1,12 +1,13 @@
 package com.bluesky.mobileEEI;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Robert on 2/15/2018.
  */
 
-public class EngineData
+public class EngineData implements Serializable
 {
     private String engineSerial;
     private String aircraftID;

@@ -1,10 +1,12 @@
 package com.bluesky.mobileEEI;
 
+import java.io.Serializable;
+
 /**
  * Created by Robert on 2/15/2018.
  */
 
-public class EngineMaintenanceData
+public class EngineMaintenanceData implements Serializable
 {
     private int numberConditions;
     private int numberTypeOne;

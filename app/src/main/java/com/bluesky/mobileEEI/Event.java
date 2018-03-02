@@ -1,5 +1,6 @@
 package com.bluesky.mobileEEI;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
@@ -7,7 +8,7 @@ import java.util.Date;
  * Created by Robert on 2/15/2018.
  */
 
-public class Event
+public class Event implements Serializable
 {
     private String type;
     private Date startTime;

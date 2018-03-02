@@ -1,10 +1,12 @@
 package com.bluesky.mobileEEI;
 
+import java.io.Serializable;
+
 /**
  * Created by Robert on 2/15/2018.
  */
 
-public class AllEventsChart
+public class AllEventsChart implements Serializable
 {
     private String[] parameter;
     private int[] value;
