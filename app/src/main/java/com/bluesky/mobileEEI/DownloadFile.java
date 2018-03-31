@@ -13,9 +13,9 @@ public class DownloadFile implements Serializable {
     private EngineMaintenanceData engineMaintenanceData;
     private Event event;
     private EventSummary eventSummary;
-    private ExceedanceDetail exceedanceDetail;
-    private ExceedanceSummary exceedanceSummary;
-    private Fault faults[];
+//    private ExceedanceDetail exceedanceDetail;
+    private ExceedanceSummary[] exceedanceSummary;
+    private Fault[] faults;
 
     public DownloadFile () {
 
@@ -45,11 +45,11 @@ public class DownloadFile implements Serializable {
         return eventSummary;
     }
 
-    public ExceedanceDetail getExceedanceDetail() {
-        return exceedanceDetail;
-    }
+//   // public ExceedanceDetail getExceedanceDetail() {
+//        return exceedanceDetail;
+//    }
 
-    public ExceedanceSummary getExceedanceSummary() {
+    public ExceedanceSummary[] getExceedanceSummary() {
         return exceedanceSummary;
     }
 
@@ -60,6 +60,6 @@ public class DownloadFile implements Serializable {
     @Override
     public String toString() {
         return "\nDownloadFile: "+ allEventsChart + chart + engineData + engineMaintenanceData +
-                event + eventSummary + exceedanceDetail + exceedanceSummary + faults.toString();
+                event + eventSummary + exceedanceSummary.toString() + faults.toString();
     }
 }

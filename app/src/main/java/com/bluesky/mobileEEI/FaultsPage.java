@@ -23,7 +23,7 @@ public class FaultsPage extends AppCompatActivity{
     private DownloadFile downloadFile;
     public ListView mainListView ;
     public ArrayAdapter listAdapter ;
-    String[] faults = new String[]{};
+    private Fault[] faults;
 
 
     @Override
@@ -32,17 +32,16 @@ public class FaultsPage extends AppCompatActivity{
         TypefaceProvider.registerDefaultIconSets();
         setContentView(R.layout.faults_activity);
         downloadFile = (DownloadFile) getIntent().getSerializableExtra("DownloadFile");
-        for(int i=0; i<downloadFile.getFaults().length; i++){
-            faults[i] = downloadFile.getFaults()[i].toString();
-        }
+        faults = downloadFile.getFaults();
+
         // Find the ListView resource.
         mainListView = (ListView) findViewById( R.id.faults_list );
 
-        ArrayList<String> itemsList = new ArrayList<>();
-        itemsList.addAll( Arrays.asList(faults) );
+        final ArrayList<Fault> faultItems = new ArrayList<>();
+        faultItems.addAll( Arrays.asList(faults) );
 
         // Create ArrayAdapter using the item list.
-        listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, itemsList);
+        listAdapter = new ArrayAdapter<>(this, R.layout.simplerow, faultItems);
         mainListView.setAdapter( listAdapter );
 
      //   buttons();

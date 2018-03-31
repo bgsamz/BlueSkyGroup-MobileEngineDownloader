@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         TypefaceProvider.registerDefaultIconSets();
         setContentView(R.layout.activity_main);
-       // enableBT();
+
+        enableBT();
         buttons();
     }
 }

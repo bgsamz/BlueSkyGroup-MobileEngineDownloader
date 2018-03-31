@@ -12,10 +12,11 @@ public class ExceedanceSummary implements Serializable
 {
     private String excID;
     private Date date;
-//    private Time time;
+    //    private Time time;
     private float peak;
     private int duration;
     private int mc;
+    private ExceedanceDetail exceedanceDetail;
 
     public ExceedanceSummary(String excID, Date date, Time time, float peak,
                              int duration, int mc)
@@ -32,9 +33,33 @@ public class ExceedanceSummary implements Serializable
 
     }
 
+    public String getExcID() {
+        return excID;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public float getPeak() {
+        return peak;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public int getMc() {
+        return mc;
+    }
+
+    public ExceedanceDetail getExceedanceDetail() {
+        return exceedanceDetail;
+    }
+
     @Override
     public String toString() {
-        return "\nExceedanceSummary: excID = " + excID + ", date = " + date + ", peak = " + peak +
-                ", duration = " + duration + ", mc = " + mc;
+        return excID + "    " + date + "    " + peak +
+                "    " + duration + "    " + mc;
     }
 }

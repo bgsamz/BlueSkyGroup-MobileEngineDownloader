@@ -126,7 +126,7 @@ public class bluetoothConnections extends AppCompatActivity{
         listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, itemsList);
         mainListView.setAdapter( listAdapter );
 
-      //  getPairs();
+        getPairs();
         buttons();
     }
 }
