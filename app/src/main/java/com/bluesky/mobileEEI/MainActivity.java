@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public Button connect;
     public Button parse;
     public Button summaryPage;
+    public Button faultsPage;
     private final static int REQUEST_ENABLE_BT = 1;
     BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -76,13 +77,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(summaryPageIntent);
             }
         });
+        faultsPage = (Button) findViewById(R.id.FaultsPage);
+        faultsPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent summaryPageIntent = new Intent(MainActivity.this, FaultsPage.class);
+                summaryPageIntent.putExtra("DownloadFile", downloadFile);
+                startActivity(summaryPageIntent);
+            }
+        });
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TypefaceProvider.registerDefaultIconSets();
         setContentView(R.layout.activity_main);
-        enableBT();
+       // enableBT();
         buttons();
     }
 }

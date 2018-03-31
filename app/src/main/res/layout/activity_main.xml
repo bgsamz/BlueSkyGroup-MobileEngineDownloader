@@ -9,52 +9,48 @@
 
     <Button
         android:id="@+id/Connect"
-        android:layout_width="94dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="13dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="256dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="58dp"
         android:text="Connect"
-        app:layout_constraintBottom_toTopOf="@+id/parsedText"
-        app:layout_constraintEnd_toStartOf="@+id/Parse"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/SummaryPage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Parse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="265dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="42dp"
         android:text="Parse"
-        app:layout_constraintEnd_toStartOf="@+id/SummaryPage"
-        app:layout_constraintStart_toEndOf="@+id/Connect"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/FaultsPage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SummaryPage" />
 
     <Button
         android:id="@+id/SummaryPage"
-        android:layout_width="117dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="21dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginTop="16dp"
-        android:text="Summary Page"
-        app:layout_constraintBottom_toTopOf="@+id/parsedText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Parse"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="268dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
+        android:text="Summary"
+        app:layout_constraintBottom_toTopOf="@+id/Parse"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Connect" />
 
-    <TextView
-        android:id="@+id/parsedText"
+    <Button
+        android:id="@+id/FaultsPage"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:text="TextView"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginStart="52dp"
+        android:text="Faults"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SummaryPage" />
+        app:layout_constraintTop_toBottomOf="@+id/Parse" />
 </android.support.constraint.ConstraintLayout>

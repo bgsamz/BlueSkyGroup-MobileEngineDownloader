@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".bluetoothConnections"/>
         <activity android:name=".SummaryPage"/>
+        <activity android:name=".FaultsPage"/>
     </application>
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
