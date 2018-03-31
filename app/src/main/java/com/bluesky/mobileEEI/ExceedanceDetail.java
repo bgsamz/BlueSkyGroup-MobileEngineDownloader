@@ -23,6 +23,18 @@ public class ExceedanceDetail implements Serializable
 
     }
 
+    public String getParameter() {
+        return parameter;
+    }
+
+    public float getValue() {
+        return value;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
     @Override
     public String toString() {
         return "\nExceedanceDetail: parameter = " + parameter + ", value = " + value + ", unit = " + unit;
