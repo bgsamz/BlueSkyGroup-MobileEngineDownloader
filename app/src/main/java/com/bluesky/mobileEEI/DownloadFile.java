@@ -53,13 +53,13 @@ public class DownloadFile implements Serializable {
         return exceedanceSummary;
     }
 
-    public Fault[] getFault() {
+    public Fault[] getFaults() {
         return faults;
     }
 
     @Override
     public String toString() {
         return "\nDownloadFile: "+ allEventsChart + chart + engineData + engineMaintenanceData +
-                event + eventSummary + exceedanceSummary + faults.toString();
+                event + eventSummary + exceedanceSummary.toString() + faults.toString();
     }
 }
