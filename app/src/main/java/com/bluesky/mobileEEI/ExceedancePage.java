@@ -57,8 +57,12 @@ public class ExceedancePage extends AppCompatActivity {
         exceedancesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("exceedanceDetail", (ExceedanceSummary) parent.getItemAtPosition(position));
+
                 FragmentManager fm = getFragmentManager();
                 ExceedanceDialogFragment exceedanceDialogFragment = new ExceedanceDialogFragment();
+                exceedanceDialogFragment.setArguments(bundle);
                 exceedanceDialogFragment.show(fm, "Selected Exceedance");
             }
         });

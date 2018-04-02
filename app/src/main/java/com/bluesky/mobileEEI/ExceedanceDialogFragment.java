@@ -12,13 +12,15 @@ import android.os.Bundle;
 
 public class ExceedanceDialogFragment extends DialogFragment {
     private ExceedanceDetail exceedanceDetail;
+    private ExceedanceSummary exceedanceSummary;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        exceedanceDetail = (ExceedanceDetail) getActivity().getIntent().getSerializableExtra("exceedanceDetail");
+        exceedanceSummary = (ExceedanceSummary) getArguments().getSerializable("exceedanceDetail");
+        exceedanceDetail = exceedanceSummary.getExceedanceDetail();
 
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("test")
+        builder.setMessage(exceedanceDetail.toString())
                 .setPositiveButton("Done", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // FIRE ZE MISSILES!
