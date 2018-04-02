@@ -45,7 +45,7 @@ public class DownloadFile implements Serializable {
         return eventSummary;
     }
 
-//   // public ExceedanceDetail getExceedanceDetail() {
+//    public ExceedanceDetail getExceedanceDetail() {
 //        return exceedanceDetail;
 //    }
 
