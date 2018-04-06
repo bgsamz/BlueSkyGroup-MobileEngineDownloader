@@ -9,8 +9,9 @@ import java.io.Serializable;
 public class Chart implements Serializable
 {
     private String eventType;
-    private Event events;
+    public Event events;
     private String chartType;
+
 
     public Chart(String eventType, Event events, String chartType)
     {

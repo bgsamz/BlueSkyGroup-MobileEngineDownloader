@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public Button summaryPage;
     public Button faultsPage;
     public Button exceedancePage;
+    public Button eventPage;
     private final static int REQUEST_ENABLE_BT = 1;
     BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -95,6 +96,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent summaryPageIntent = new Intent(MainActivity.this, ExceedancePage.class);
                 summaryPageIntent.putExtra("DownloadFile", downloadFile);
                 startActivity(summaryPageIntent);
+            }
+        });
+
+        eventPage = (Button) findViewById(R.id.EventPage);
+        eventPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent eventPageIntent = new Intent(MainActivity.this, EventPage.class);
+                eventPageIntent.putExtra("DownloadFile", downloadFile);
+                startActivity(eventPageIntent);
             }
         });
     }

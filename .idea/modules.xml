@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BlueSkyGroup-MobileEngineDownloader.iml" filepath="$PROJECT_DIR$/BlueSkyGroup-MobileEngineDownloader.iml" />
+      <module fileurl="file://C:\Users\Robert\AndroidStudioProjects\BlueSkyGroup-MobileEngineDownloader\BlueSkyGroup-MobileEngineDownloader.iml" filepath="C:\Users\Robert\AndroidStudioProjects\BlueSkyGroup-MobileEngineDownloader\BlueSkyGroup-MobileEngineDownloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Robert\AndroidStudioProjects\BlueSkyGroup-MobileEngineDownloader\app\app.iml" filepath="C:\Users\Robert\AndroidStudioProjects\BlueSkyGroup-MobileEngineDownloader\app\app.iml" />
     </modules>
   </component>
 </project>

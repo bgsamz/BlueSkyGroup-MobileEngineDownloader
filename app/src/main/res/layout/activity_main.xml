@@ -68,4 +68,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ExceedancePage" />
+
+    <Button
+        android:id="@+id/EventPage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="145dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginStart="42dp"
+        android:text="Events Page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ExceedancePage" />
 </android.support.constraint.ConstraintLayout>

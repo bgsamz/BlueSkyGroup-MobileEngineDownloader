@@ -26,6 +26,7 @@
         <activity android:name=".SummaryPage"/>
         <activity android:name=".FaultsPage"/>
         <activity android:name=".ExceedancePage" />
+        <activity android:name=".EventPage" />
     </application>
 
 </manifest>

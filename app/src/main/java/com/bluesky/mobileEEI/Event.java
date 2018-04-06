@@ -14,7 +14,7 @@ public class Event implements Serializable
     private Date startTime;
     private Date endTime;
 //    private Date date;
-    private int[] values;
+    public int[] values;
     private String units;
 
     public Event(String type, Time startTime, Time endTime, Date date,
