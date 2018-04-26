@@ -17,7 +17,7 @@ import java.io.OutputStream;
 
 public class FileParser {
 
-    public DownloadFile run(Context context) {
+    public DownloadFile parse(Context context) {
         try {
             File file = new File(context.getFilesDir(), "test.yaml");
             if(!file.exists())

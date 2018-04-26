@@ -23,8 +23,19 @@ public class FaultsPage extends AppCompatActivity{
     private DownloadFile downloadFile;
     public ListView mainListView ;
     public ArrayAdapter listAdapter ;
+    public Button home;
     private Fault[] faults;
 
+    public void buttons() {
+        home = findViewById(R.id.home_button_faults);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeIntent = new Intent(FaultsPage.this, MainActivity.class);
+                startActivity(homeIntent);
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +55,7 @@ public class FaultsPage extends AppCompatActivity{
         listAdapter = new ArrayAdapter<>(this, R.layout.simplerow, faultItems);
         mainListView.setAdapter( listAdapter );
 
-     //   buttons();
+        buttons();
 
     }
 }

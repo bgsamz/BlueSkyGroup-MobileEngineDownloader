@@ -75,6 +75,9 @@ public class bluetoothConnections extends AppCompatActivity{
                 home.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+//                        FileParser fileParser = new FileParser();
+//                        DownloadFile downloadFile = fileParser.run(getApplicationContext());
+
                         Intent currentListsIntent = new Intent(bluetoothConnections.this, MainActivity.class);
                         startActivity(currentListsIntent);
                     }

@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     static String started = "starting thread";
     static String ended = "thread has joined";
     public Button connect;
-    public Button parse;
+//    public Button parse;
     public Button summaryPage;
     public Button faultsPage;
     public Button exceedancePage;
@@ -44,36 +44,26 @@ public class MainActivity extends AppCompatActivity {
 
             Intent currentListsIntent = new Intent(MainActivity.this, bluetoothConnections.class);
             startActivity(currentListsIntent);
+            }
+        });
 
-//            TextView textView = (TextView) findViewById(R.id.parsedText);
-//            textView.setText(started);
-//            BluetoothDevice device = adapter.getRemoteDevice("A4:5E:60:DF:2F:B6");
-//            BluetoothHandlerThread mBluetoothHandlerThread = new BluetoothHandlerThread(device, getApplicationContext());
-//            mBluetoothHandlerThread.start();
-//            try {
-//                mBluetoothHandlerThread.join();
-//                textView.setText(ended);
-//            } catch (Exception e) {
-//                textView.setText(e.toString());
+//        parse = (Button) findViewById(R.id.Parse);
+//        parse.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                FileParser fileParser = new FileParser();
+//                downloadFile = fileParser.run(getApplicationContext());
+////                TextView textView = (TextView) findViewById(R.id.parsedText);
+////                textView.setText(parsed);
 //            }
-            }
-        });
-
-        parse = (Button) findViewById(R.id.Parse);
-        parse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FileParser fileParser = new FileParser();
-                downloadFile = fileParser.run(getApplicationContext());
-//                TextView textView = (TextView) findViewById(R.id.parsedText);
-//                textView.setText(parsed);
-            }
-        });
+//        });
 
         summaryPage = (Button) findViewById(R.id.SummaryPage);
         summaryPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FileParser fileParser = new FileParser();
+                downloadFile = fileParser.parse(getApplicationContext());
                 Intent summaryPageIntent = new Intent(MainActivity.this, SummaryPage.class);
                 summaryPageIntent.putExtra("DownloadFile", downloadFile);
                 startActivity(summaryPageIntent);
@@ -83,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
         faultsPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FileParser fileParser = new FileParser();
+                downloadFile = fileParser.parse(getApplicationContext());
                 Intent summaryPageIntent = new Intent(MainActivity.this, FaultsPage.class);
                               summaryPageIntent.putExtra("DownloadFile", downloadFile);
                 startActivity(summaryPageIntent);
@@ -93,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         exceedancePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FileParser fileParser = new FileParser();
+                downloadFile = fileParser.parse(getApplicationContext());
                 Intent summaryPageIntent = new Intent(MainActivity.this, ExceedancePage.class);
                 summaryPageIntent.putExtra("DownloadFile", downloadFile);
                 startActivity(summaryPageIntent);
@@ -103,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
         eventPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FileParser fileParser = new FileParser();
+                downloadFile = fileParser.parse(getApplicationContext());
                 Intent eventPageIntent = new Intent(MainActivity.this, EventPage.class);
                 eventPageIntent.putExtra("DownloadFile", downloadFile);
                 startActivity(eventPageIntent);
@@ -115,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         TypefaceProvider.registerDefaultIconSets();
         setContentView(R.layout.activity_main);
 
-//        enableBT();
+        enableBT();
         buttons();
     }
 }
