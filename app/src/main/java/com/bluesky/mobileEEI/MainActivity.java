@@ -64,9 +64,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FileParser fileParser = new FileParser();
                 downloadFile = fileParser.parse(getApplicationContext());
-                Intent summaryPageIntent = new Intent(MainActivity.this, SummaryPage.class);
-                summaryPageIntent.putExtra("DownloadFile", downloadFile);
-                startActivity(summaryPageIntent);
+                if (downloadFile != null) {
+                    Intent summaryPageIntent = new Intent(MainActivity.this, SummaryPage.class);
+                    summaryPageIntent.putExtra("DownloadFile", downloadFile);
+                    startActivity(summaryPageIntent);
+                }
             }
         });
         faultsPage = (Button) findViewById(R.id.FaultsPage);
@@ -75,9 +77,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FileParser fileParser = new FileParser();
                 downloadFile = fileParser.parse(getApplicationContext());
-                Intent summaryPageIntent = new Intent(MainActivity.this, FaultsPage.class);
-                              summaryPageIntent.putExtra("DownloadFile", downloadFile);
-                startActivity(summaryPageIntent);
+                if (downloadFile != null) {
+                    Intent summaryPageIntent = new Intent(MainActivity.this, FaultsPage.class);
+                    summaryPageIntent.putExtra("DownloadFile", downloadFile);
+                    startActivity(summaryPageIntent);
+                }
             }
         });
 
@@ -87,9 +91,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FileParser fileParser = new FileParser();
                 downloadFile = fileParser.parse(getApplicationContext());
-                Intent summaryPageIntent = new Intent(MainActivity.this, ExceedancePage.class);
-                summaryPageIntent.putExtra("DownloadFile", downloadFile);
-                startActivity(summaryPageIntent);
+                if (downloadFile != null) {
+                    Intent summaryPageIntent = new Intent(MainActivity.this, ExceedancePage.class);
+                    summaryPageIntent.putExtra("DownloadFile", downloadFile);
+                    startActivity(summaryPageIntent);
+                }
             }
         });
 
@@ -99,9 +105,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FileParser fileParser = new FileParser();
                 downloadFile = fileParser.parse(getApplicationContext());
-                Intent eventPageIntent = new Intent(MainActivity.this, EventPage.class);
-                eventPageIntent.putExtra("DownloadFile", downloadFile);
-                startActivity(eventPageIntent);
+                if (downloadFile != null) {
+                    Intent eventPageIntent = new Intent(MainActivity.this, EventPage.class);
+                    eventPageIntent.putExtra("DownloadFile", downloadFile);
+                    startActivity(eventPageIntent);
+                }
             }
         });
     }

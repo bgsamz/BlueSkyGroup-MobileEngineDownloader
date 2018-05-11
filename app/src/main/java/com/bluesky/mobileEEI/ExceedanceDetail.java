@@ -37,6 +37,6 @@ public class ExceedanceDetail implements Serializable
 
     @Override
     public String toString() {
-        return "\nExceedanceDetail: parameter = " + parameter + ", value = " + value + ", unit = " + unit;
+        return "Parameter -- Value -- Unit\n\n" + parameter + " -- " + value + " -- " + unit;
     }
 }

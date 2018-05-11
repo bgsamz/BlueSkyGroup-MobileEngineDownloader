@@ -26,6 +26,6 @@ public class Fault implements Serializable
 
     @Override
     public String toString() {
-        return "\nFault: ffFaultID = " + ffFaultID + ", description = " + description + ", date = " + date;
+        return ffFaultID + " -- " + description + " -- " + date;
     }
 }

@@ -33,7 +33,7 @@ public class bluetoothConnections extends AppCompatActivity{
 
     public ListView mainListView ;
     public ArrayAdapter listAdapter ;
-    String[] devices = new String[]{"this is a test"};
+//    String[] devices = new String[]{"this is a test"};
 
     private void getPairs(){
         Set<BluetoothDevice> pairedDevices = adapter.getBondedDevices();
@@ -123,7 +123,7 @@ public class bluetoothConnections extends AppCompatActivity{
         mainListView = (ListView) findViewById( R.id.connections_list );
 
         ArrayList<String> itemsList = new ArrayList<>();
-        itemsList.addAll( Arrays.asList(devices) );
+//        itemsList.addAll( Arrays.asList(devices) );
 
         // Create ArrayAdapter using the item list.
         listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, itemsList);
